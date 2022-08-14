@@ -29,7 +29,14 @@ export class LogoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // DownloadFiles
   DownloadFile() {
-
+    let link = document.createElement('a');
+    link.setAttribute('target', '_blank');
+    link.setAttribute('href', 'assets/logo/');
+    link.setAttribute('download', 'kernel.zip');
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   }
 }
