@@ -5,7 +5,8 @@ import { LogoComponent } from './modules/logo/logo.component';
 
 const routes: Routes = [
   { path: '', component: LogoComponent },
-  { path: 'logo/download', component: LogoComponent }
+  // { path: 'logo/download', component: LogoComponent },
+  { path: 'logo/download', loadChildren: () => import('./modules/logo/logo.module').then(m => m.LogoModule) }
 ];
 
 @NgModule({
